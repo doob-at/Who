@@ -1,0 +1,26 @@
+@import '../../style-variables.scss';
+
+.login-form {
+  // margin: 100px auto;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.resultIcon {
+  color: $primary-color!important;
+}
+
+.error-message {
+  width: 600px;
+  margin:auto
+}

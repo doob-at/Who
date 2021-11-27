@@ -1,0 +1,51 @@
+<form nz-form [formGroup]="form" class="login-form" (ngSubmit)="Submit()" *ngIf="form">
+    <div style="width: 400px; margin: auto">
+
+        <nz-result nzStatus="success" nzTitle="Create your first Admin User" [nzIcon]="cIcon">
+            <div nz-result-extra>
+
+
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your username!">
+                        <nz-input-group nzPrefixIcon="user">
+                            <input type="text" nz-input formControlName="Username" placeholder="Username" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                        <nz-input-group nzPrefixIcon="lock">
+                            <input type="password" nz-input formControlName="Password" placeholder="Password" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                        <nz-input-group nzPrefixIcon="lock">
+                            <input type="password" nz-input formControlName="ConfirmPassword"
+                                placeholder="Confirm Password" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+
+
+                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Submit</button>
+            </div>
+        </nz-result>
+        
+        
+    </div>
+    <nz-alert nzType="error" [nzMessage]="errorDescription" *ngIf="(errors || []).length > 0" nzShowIcon class="error-message"></nz-alert>
+</form>
+
+<ng-template #errorDescription>
+    <div *ngFor="let error of errors">
+        {{error.Description}}
+    </div>
+</ng-template>
+
+<ng-template #cIcon>
+    <i nz-icon nzType="user-add" nzTheme="outline" class="resultIcon"></i>
+</ng-template>
